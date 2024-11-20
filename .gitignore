@@ -1,0 +1,7 @@
+server/node_modules/
+server/.env
+server/package-lock.json
+client/node_modules/
+client/package-lock.json
+Account+information+API/node_modules/
+Account+information+API/package-lock.json
