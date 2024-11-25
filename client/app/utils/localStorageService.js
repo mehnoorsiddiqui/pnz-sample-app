@@ -27,9 +27,13 @@ export const localStorageService = (function () {
         return value
 
     }
+    function _removeAccessToken() {
+        localStorage.removeItem('access_token')
+    }
 
     return {
         setAccessToken: _setAccessToken,
-        getAccessToken: _getAccessToken
+        getAccessToken: _getAccessToken,
+        removeAccesToken: _removeAccessToken
     }
 })()

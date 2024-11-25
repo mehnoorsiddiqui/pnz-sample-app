@@ -55,5 +55,9 @@ export const useAuth = () => {
     const onFailure = (error) => {
         console.error("Login failed:", error);
     };
-    return { isLoggedIn, loading, handleLogin };
+    const handleLogout = async () => {
+        localStorageService.removeAccesToken();
+        setIsLoggedIn(false); 
+    }
+    return { isLoggedIn, loading, handleLogin , handleLogout};
 };

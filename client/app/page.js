@@ -7,7 +7,7 @@ import AccountSelector from "./components/AccountSelector";
 import TransactionList from "./components/TransactionList";
 
 export default function Home() {
-    const { isLoggedIn, loading, handleLogin } = useAuth();
+    const { isLoggedIn, loading, handleLogin, handleLogout } = useAuth();
     const { accounts, selectedAccount, setSelectedAccount } = useAccounts(isLoggedIn);
     const { transactions, fetchTransactions } = useTransactions(selectedAccount);
 
@@ -24,6 +24,9 @@ export default function Home() {
 
     return (
         <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+             <button onClick={handleLogout} disabled={loading}>
+                    Logout
+                </button>
             <h1>Account Dashboard</h1>
             <AccountSelector
                 accounts={accounts}
